@@ -11,8 +11,10 @@ Paper defeats Rock.
 map = {"A": "X", "B": "Y", "C": "Z"}
 points = {"X": 1, "Y": 2, "Z": 3}
 win = {"X": "Z", "Z": "Y", "Y": "X"}
-loss = dict ((v, k) for k, v in win.items())
+loss = dict((v, k) for k, v in win.items())
 print_help = {"X": "Rock", "Y": "Paper", "Z": "Scissors"}
+
+
 def get_score(opp, pla):
     res = 0
     res += points[pla]
@@ -30,8 +32,9 @@ def part_1():
     for turn in inp:
         opp, pla = turn.split()
         opp = map[opp]
-        res += get_score(opp, pla) 
+        res += get_score(opp, pla)
     return res
+
 
 def part_2():
     res = 0
