@@ -47,7 +47,7 @@ def part_2():
                 # Loss
                 pla = win[opp]
             case "Y":
-                # TIe
+                # Tie
                 pla = opp
             case "Z":
                 # Win
