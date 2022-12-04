@@ -1,0 +1,10 @@
+#!/bin/env bash
+
+FILES=$(find . -name "day_*.py" | sort)
+# echo $FILES
+
+for DAY in $FILES
+do
+    echo ""
+    python3 $DAY
+done
