@@ -31,9 +31,7 @@ def part_1():
         for _ in range(num):
             _box_stack[dest - 1].append(_box_stack[source - 1].pop())
 
-    res = "".join([x[-1] for x in _box_stack])
-
-    return res
+    return "".join([x[-1] for x in _box_stack])
 
 
 def part_2():
@@ -42,16 +40,10 @@ def part_2():
         _, num, _, source, _, dest = inp[i].split()
         num, source, dest = [int(x) for x in [num, source, dest]]
 
-        _box_stack[dest - 1].extend(
-            _box_stack[source - 1][len(_box_stack[source - 1]) - num :]
-        )
-        _box_stack[source - 1] = _box_stack[source - 1][
-            : len(_box_stack[source - 1]) - num
-        ]
+        _box_stack[dest - 1].extend(_box_stack[source - 1][-num:])
+        _box_stack[source - 1] = _box_stack[source - 1][:-num]
 
-    res = "".join([x[-1] for x in _box_stack])
-
-    return res
+    return "".join([x[-1] for x in _box_stack])
 
 
 print(f"D05P1: {part_1()}")
